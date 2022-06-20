@@ -31,6 +31,7 @@ class FontSelectionViewController: UIViewController {
         fontTableView.dataSource = self
         self.navigationController?.isNavigationBarHidden = true
         fontTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        setCustomFont()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,6 +48,15 @@ class FontSelectionViewController: UIViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         // Update preferredContentSize only when fontTableView is populated
         self.preferredContentSize = CGSize(width: super.preferredContentSize.width, height: fontTableView.contentSize.height)
+    }
+    
+    func setCustomFont() -> Void {
+        userSettings?.userProperties.removeProperty(forReference: ReadiumCSSReference.fontFamily)
+        let fontFamilyValues = ["Original", "Sarabun", "JS Jindara"]
+        userSettings?.userProperties.addEnumerable(index: 0,
+                                     values: fontFamilyValues,
+                                     reference: ReadiumCSSReference.fontFamily.rawValue,
+                                     name: ReadiumCSSName.fontFamily.rawValue)
     }
 }
 
