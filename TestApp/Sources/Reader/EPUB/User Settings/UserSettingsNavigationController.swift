@@ -34,6 +34,7 @@ internal class UserSettingsNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.tintColor = UIColor.label
         userSettings = usdelegate.getUserSettings()
         
         userSettingsTableViewController.modalPresentationStyle = .popover
