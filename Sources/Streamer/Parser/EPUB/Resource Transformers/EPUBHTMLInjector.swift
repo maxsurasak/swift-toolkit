@@ -66,6 +66,7 @@ final class EPUBHTMLInjector {
                     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0;"/>
                     <style type="text/css">@font-face{font-family: "Sarabun"; src:url("/fonts/Sarabun-Regular.ttf") format("opentype");}</style>
                     <style type="text/css">@font-face{font-family: "JS Jindara"; src:url("/fonts/JSJindara-Normal.ttf") format("opentype");}</style>
+                    <style type="text/css">@font-face{font-family: "BaiJamjuree"; src:url("/fonts/BaiJamjuree-Regular.ttf") format("opentype");}</style>
                 """, at: headStart)
             }
             
